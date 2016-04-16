@@ -74,7 +74,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davezuko/react-redux-starter-kit.git"
+    "url": "git+https://github.com:nexthome/practice-web.git"
   },
   "author": "Said Kholov",
   "license": "MIT",

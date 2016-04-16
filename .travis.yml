@@ -1,4 +1,7 @@
-sudo: false
+sudo: required
+services:
+  - docker
+
 language: node_js
 node_js:
   - "5.0"
@@ -9,6 +12,7 @@ cache:
 
 install:
   - npm install
+  - docker login --email=$DOCKER_HUB_EMAIL --username=$DOCKER_HUB_USERNAME --password=$DOCKER_HUB_PASSWORD
 
 script:
   - npm run lint
@@ -17,6 +21,9 @@ script:
   - NODE_ENV=development npm run deploy
   - NODE_ENV=staging npm run deploy
   - NODE_ENV=production npm run deploy
+  - docker build -t $DOCKER_IMAGE_NAME .
+  - if [ ! -z "$TRAVIS_TAG" ]; then docker tag $DOCKER_IMAGE_NAME:latest $DOCKER_IMAGE_NAME:$TRAVIS_TAG; fi && docker push $DOCKER_IMAGE_NAME
+
 
 after_success:
   - npm run codecov
