@@ -5,6 +5,7 @@ MAINTAINER skholov2@gmail.com
 WORKDIR /nexthome-web
 
 COPY . /nexthome-web
+ENV NODE_ENV=production
 
 RUN apt-get install -y curl && \
     curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash - && \
