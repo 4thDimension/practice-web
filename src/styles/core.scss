@@ -1,9 +1,10 @@
 :global {
+  @import 'fonts';
   @import 'base';
   @import 'vendor/normalize';
+  @import 'bootstrapOverride';
 
-  // Some best-practice CSS that's useful for most apps
-  // Just remove them if they're not what you want
+
   html {
     box-sizing: border-box;
   }
@@ -13,6 +14,7 @@
     margin: 0;
     padding: 0;
     height: 100%;
+    font-family: "open_sansregular", Helvetica, Arial, sans-serif;
   }
 
   *,
@@ -21,3 +23,4 @@
     box-sizing: inherit;
   }
 }
+

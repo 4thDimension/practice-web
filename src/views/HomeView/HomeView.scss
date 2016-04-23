@@ -1,14 +1,54 @@
-.counter {
-  font-weight: bold;
-}
+@import '../../styles/base';
 
-.counter--green {
-  composes: counter;
-  color: rgb(25,200,25);
+.main {
+  padding: 18em 0 0 1em;
+  @media (max-width: 600px) {
+    padding: 5em 0 0 1em;
+  }
+  color: #fff;
+  background-size: cover;
 }
-
-.duck {
-  display: block;
-  width: 100%;
-  margin-top: 1.5rem;
+.logo {
+  font-size: 37px;
+}
+.main-text {
+  text-transform: uppercase;
+  font: {
+    size: 43px;
+    family: 'montserrat', Helvetica Neue, sans-serif;
+    weight: 600;
+  };
+}
+.subscribe-form {
+  margin-bottom: 200px;
+  label {
+    font: {
+      family: 'montserrat', Helvetica Neue, sans-serif;
+      size: 20px;
+      weight: 300;
+    }
+    margin-bottom: 30px;
+  }
+  @include placeholder {
+    color: #dedede;
+  }
+  input {
+    outline: 0;
+    background: rgba(255,255,255, 0.23);
+    border: 0px;
+    padding: 17px;
+    font-size: 14px;
+    width: 100%;
+  }
+  button {
+    &:hover {
+      background-color: #bd443c;
+    }
+    width: 100%;
+    outline: 0;
+    background-color: #e7554a;
+    padding: 15px 31px;
+    border: 0px;
+    font-size: 14px;
+  }
 }
