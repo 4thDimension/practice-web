@@ -7,7 +7,8 @@ WORKDIR /nexthome-web
 COPY . /nexthome-web
 ENV NODE_ENV=production
 
-RUN apt-get install -y curl && \
+RUN apt-get update && \
+    apt-get install -y curl && \
     curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash - && \
     apt-get install -y nodejs && \
     npm install
