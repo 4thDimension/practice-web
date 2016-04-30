@@ -21,8 +21,8 @@ script:
   - NODE_ENV=development npm run deploy
   - NODE_ENV=staging npm run deploy
   - NODE_ENV=production npm run deploy
+  - docker build -t $DOCKER_IMAGE_NAME .
 
 after_success:
-  - docker build -t $DOCKER_IMAGE_NAME .
   - if [ ! -z "$TRAVIS_TAG" ]; then docker tag $DOCKER_IMAGE_NAME:latest $DOCKER_IMAGE_NAME:$TRAVIS_TAG; fi && docker push $DOCKER_IMAGE_NAME
   - npm run codecov
