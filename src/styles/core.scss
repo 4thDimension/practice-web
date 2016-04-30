@@ -1,5 +1,5 @@
+@import 'fonts';
 :global {
-  @import 'fonts';
   @import 'base';
   @import 'vendor/normalize';
   @import 'bootstrapOverride';
@@ -14,9 +14,11 @@
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: "open_sansregular", Helvetica, Arial, sans-serif;
+    font: {
+      family: "open_sansregular", Helvetica Neue, Helvetica, sans-serif;
+      weight: normal;
+    }
   }
-
   *,
   *:before,
   *:after {

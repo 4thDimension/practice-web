@@ -2,12 +2,12 @@ $font-directory: '../static/fonts';
 
 @font-face {
   font-family: 'open_sansregular';
-  src: url('#{$font-directory}/open-sans.regular-webfont.eot');
-  src: url('#{$font-directory}/open-sans.regular-webfont.eot?#iefix') format('embedded-opentype'),
-  url('#{$font-directory}/open-sans.regular-webfont.woff2') url('#{$font-directory}/open-sans.regular-webfont.woff'),
-  format('woff2') format('woff'),
-  url('#{$font-directory}/open-sans.regular-webfont.ttf') format('truetype'),
-  url('#{$font-directory}/open-sans.regular-webfont.svg#open_sansregular') format('svg');
+  src: url('#{$font-directory}/open-sans-regular-webfont.eot');
+  src: url('#{$font-directory}/open-sans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-directory}/open-sans-regular-webfont.woff2') format('woff2'),
+  url('#{$font-directory}/open-sans-regular-webfont.woff') format('woff'),
+  url('#{$font-directory}/open-sans-regular-webfont.ttf') format('truetype'),
+  url('#{$font-directory}/open-sans-regular-webfont.svg#open_sansregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }

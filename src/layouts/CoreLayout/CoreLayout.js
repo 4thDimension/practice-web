@@ -12,8 +12,8 @@ import '../../styles/core.scss';
 // define it with a plain javascript function...
 function CoreLayout ({ children }) {
   return (
-    <div className='page-container'>
-      <div className='view-container'>
+    <div className='page-container' style={{height: '100%'}}>
+      <div className='view-container' style={{height: '100%'}}>
         {children}
       </div>
     </div>

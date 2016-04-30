@@ -1,6 +1,13 @@
 .navbar {
   margin-bottom: 0;
-  font-family: 'existence', Helvetica Neue, sans-serif;
-  font-size: 25px;
-  font-weight: 200;
+  font: {
+    family: 'existence', Helvetica Neue, sans-serif;
+    size: 25px ;
+    weight: 200;
+  }
+  &.fixed-nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(255,255,255,0.9);
+  }
 }

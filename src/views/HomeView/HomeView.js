@@ -1,5 +1,5 @@
 /* @flow */
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import HomeBg from './home-bg.jpg';
 import classes from './HomeView.scss';
@@ -9,8 +9,8 @@ type Props = {};
 export class HomeView extends React.Component<void, Props, void> {
   render () {
     return (
-      <div>
-        <Navbar>
+      <div style={{height: '100%'}}>
+        <Navbar className='fixed-nav'>
           <Navbar.Header>
             <Navbar.Brand className={classes['logo']}>
               <a href='#'>NextHome</a>
@@ -30,7 +30,7 @@ export class HomeView extends React.Component<void, Props, void> {
               Easier to find your perfect new home
             </h1>
             <form className={classes['subscribe-form']}>
-              <label>Be the first to subscribe and get access to premuim features</label>
+              <label>Be the first to subscribe and get access to premium features</label>
               <div className='row'>
                 <div className='col-sm-6 col-sm-offset-3'>
                   <div className='row'>
