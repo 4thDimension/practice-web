@@ -160,13 +160,13 @@ webpackConfig.module.loaders = [{
 // css-loader not to duplicate minimization.
 const BASE_CSS_LOADER = 'css?sourceMap&-minimize';
 
-// Add any packge names here whose styles need to be treated as CSS modules.
+// Add any packge names here whose styles need to be treated as CSS reducers.
 // These paths will be combined into a single regex.
 const PATHS_TO_TREAT_AS_CSS_MODULES = [
   // 'react-toolbox', (example)
 ];
 
-// If config has CSS modules enabled, treat this project's styles as CSS modules.
+// If config has CSS reducers enabled, treat this project's styles as CSS reducers.
 if (config.compiler_css_modules) {
   PATHS_TO_TREAT_AS_CSS_MODULES.push(
     paths.base(config.dir_client).replace(/[\^\$\.\*\+\-\?=!:\|\\\/\(\)\[\]\{},]/g, '\\$&')
@@ -176,7 +176,7 @@ if (config.compiler_css_modules) {
 const isUsingCSSModules = !!PATHS_TO_TREAT_AS_CSS_MODULES.length;
 const cssModulesRegex = new RegExp(`(${PATHS_TO_TREAT_AS_CSS_MODULES.join('|')})`);
 
-// Loaders for styles that need to be treated as CSS modules.
+// Loaders for styles that need to be treated as CSS reducers.
 if (isUsingCSSModules) {
   const cssModulesLoader = [
     BASE_CSS_LOADER,
@@ -207,7 +207,7 @@ if (isUsingCSSModules) {
   });
 }
 
-// Loaders for files that should not be treated as CSS modules.
+// Loaders for files that should not be treated as CSS reducers.
 const excludeCSSModules = isUsingCSSModules ? cssModulesRegex : false;
 webpackConfig.module.loaders.push({
   test: /\.scss$/,

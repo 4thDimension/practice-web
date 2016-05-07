@@ -13,5 +13,6 @@ RUN apt-get update && \
     apt-get install -y nodejs && \
     npm install
 
+VOLUME /data
 EXPOSE 3000
 CMD ["npm", "start"]

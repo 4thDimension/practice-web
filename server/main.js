@@ -7,12 +7,17 @@ import serve from 'koa-static';
 import proxy from 'koa-proxy';
 import _debug from 'debug';
 import config from '../config';
+import bodyParser from 'koa-bodyparser';
 import webpackDevMiddleware from './middleware/webpack-dev';
 import webpackHMRMiddleware from './middleware/webpack-hmr';
+import routes from './routes';
 
 const debug = _debug('app:server');
 const paths = config.utils_paths;
 const app = new Koa();
+
+app.use(bodyParser());
+app.use(routes.routes());
 
 // Enable koa-proxy if it has been enabled in the config.
 if (config.proxy && config.proxy.enabled) {
@@ -44,12 +49,7 @@ if (config.env === 'development') {
   // when the application is compiled.
   app.use(convert(serve(paths.client('static'))));
 } else {
-  debug(
-    'Server is being run outside of live development mode. This starter kit ' +
-    'does not provide any production-ready server functionality. To learn ' +
-    'more about deployment strategies, check out the "deployment" section ' +
-    'in the README.'
-  );
+  debug('DEVELOPMENT MODE');
 
   // Serving ~/dist by default. Ideally these files should be served by
   // the web server and not the app server, but this helps to demo the

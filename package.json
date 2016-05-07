@@ -32,7 +32,7 @@
       }
     },
     "dev": {
-      "command": "nodemon --exec babel-node bin/server",
+      "command": "nodemon --debug --exec babel-node bin/server",
       "env": {
         "NODE_ENV": "development",
         "DEBUG": "app:*"
@@ -101,11 +101,14 @@
     "history": "^2.0.0",
     "html-webpack-plugin": "^2.7.1",
     "imports-loader": "^0.6.5",
+    "isomorphic-fetch": "^2.2.1",
     "json-loader": "^0.5.4",
     "koa": "^2.0.0-alpha.3",
+    "koa-bodyparser": "^3.0.0",
     "koa-connect-history-api-fallback": "^0.3.0",
     "koa-convert": "^1.2.0",
     "koa-proxy": "^0.5.0",
+    "koa-router": "^7.0.1",
     "koa-static": "^2.0.0",
     "node-sass": "^3.3.3",
     "postcss-loader": "^0.8.0",

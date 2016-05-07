@@ -179,7 +179,7 @@ You can redefine which packages to bundle separately by modifying `compiler_vend
 Webpack is configured to make use of [resolve.root](http://webpack.github.io/docs/configuration.html#resolve-root), which lets you import local packages as if you were traversing from the root of your `~/src` directory. Here's an example:
 
 ```js
-// current file: ~/src/views/some/nested/View.js
+modules
 
 // What used to be this:
 import SomeComponent from '../../../components/SomeComponent'
